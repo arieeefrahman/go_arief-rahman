@@ -1,0 +1,6 @@
+## Summary of Introduction to Algorithm and Golang
+
+### Tiga poin yang dipelajari dari materi ini adalah.
+- Belajar algoritma secara general. Algoritma adalah prosedur komputasi yang menerima beberapa nilai sebagai *input* dan menghasilkan beberapa nilai sebagai *output*. Ada 3 karakteristik yang dimiliki oleh algoritma yaitu memiliki batas awal dan akhir agar tidak terjadi *infinite looping*, intruksi didefinisikan secara jelas, dan memiliki sifat yang efektif & efisien.
+- Ada beberapa algoritma dasar yaitu *sequential*, *branching*, dan *looping*. *Sequential* adalah algoritma akan berjalan secara berurutan dimulai dari atas. *Branching* artinya algoritma akan menemukan percabangan dan akan melihat kondisi yang diminta untuk lanjut ke langkah algoritma selanjutnya. *Looping* merupakan algoritma yang dijalankan secara berulang hingga tidak memenuhi syarat yang telah ditentukan.
+- Belajar mengenai flowchart. Flowchart adalah suatu bagan dengan simbol tertentu yang menggambarkan urutan dan hubungan antarproses secara mendetail.
