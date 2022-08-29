@@ -1,0 +1,6 @@
+## Summary of Data Structure
+
+### Tiga poin yang dipelajari dari materi ini adalah sebagai berikut.
+- Array adalah *data structure* berupa sekelompok variabel. Array dapat mengandung satu tipe data dan mempunyai alokasi ukuran yang tepat atau tidak dapat dimodifikasi. Pada array, kita diajarkan bagaimana cara mengdeklarasikan, meng-*assign* nilai, dan mengakses elemen pada array.
+- Slice adalah *data structure* yang mirip dengan array. Yang membedakannya adalah slice mempunyai alokasi ukuran yang dinamis atau dapat diubah setelah mengdeklarasikan variabel. Sebenarnya slice tidak benar-benar sebuah array yang dinamis, namun slice disebut sebuah *reference type* yang artinya dapat mengambil nilai dari array. Pada slice terdapat *function* append() dan copy(). Append() digunakan untuk menambah nilai baru pada slice, sedangkan copy() digunakan untuk menyalin seluruh nilai yang terdapat pada slice yang ingin dicopy dan di-*assign* ke variabel baru.
+- Map adalah data structure yang digunakan untuk menyimpan data dengan metode pasangan *keys and values* dengan *keys* yang unik. Selain map, kita juga belajar apa itu *function*. *Function* dibuat dengan *arguments* dan *return parameter*.
