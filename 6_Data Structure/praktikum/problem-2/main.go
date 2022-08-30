@@ -9,7 +9,7 @@ import (
 // Fungsi mengecek string dan mengembalikan nilai unique
 func munculSekali(angka string) []int {
 	count := make(map[string]int)
-		chars := make([]string, 0, len(count))
+	chars := make([]string, 0, len(count))
 	var result[]int
 
 	for _, x := range angka {
@@ -19,21 +19,21 @@ func munculSekali(angka string) []int {
 	}
 
 	for c := range count {
-    	chars = append(chars, c)
-    }
+		chars = append(chars, c)
+	}
 
     sort.Slice(chars, func(i, j int) bool {
         return count[chars[i]] > count[chars[j]]
     })
 
-	for keys, value := range count {
-		check, _ := strconv.Atoi(keys)
-		
+	for key, value := range count {
+		check, _ := strconv.Atoi(key)
+
 		if value == 1 {
 			result = append(result, check)
 		}
 	}
-	
+
 	return result
 }
 
