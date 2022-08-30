@@ -4,13 +4,16 @@ import "fmt"
 
 func PairSum(arr []int, target int) []int {
 	var result[]int
-
-	for i := 0; i < len(arr); i++ {
-		for j := i; j < len(arr); j++ {
-			if (i != j) && (arr[i] + arr[j] == target) {
-				result = append(result, i,j)
-			}
+	temp := make(map[int]int)
+	
+	for i, val := range arr {
+		
+		// cek apakah ada val dan memastikan ada pair sum
+		if j, check := temp[val]; check {
+			result = append(result, j, i)
 		}
+
+		temp[target - val] = i
 	}
 
 	return result
