@@ -9,17 +9,17 @@ import (
 // Fungsi mengecek string dan mengembalikan nilai unique
 func munculSekali(angka string) []int {
 	count := make(map[string]int)
-    chars := make([]string, 0, len(count))
+		chars := make([]string, 0, len(count))
 	var result[]int
 
 	for _, x := range angka {
-        if string(x) != " " {
-            count[string(x)]++
-        }
-    }
+		if string(x) != " " {
+			count[string(x)]++
+		}
+	}
 
 	for c := range count {
-        chars = append(chars, c)
+    	chars = append(chars, c)
     }
 
     sort.Slice(chars, func(i, j int) bool {
