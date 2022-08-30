@@ -2,34 +2,24 @@ package main
 
 import (
 	"fmt"
-	"sort"
 	"strconv"
 )
 
 // Fungsi mengecek string dan mengembalikan nilai unique
 func munculSekali(angka string) []int {
-	count := make(map[string]int)
-	chars := make([]string, 0, len(count))
 	var result[]int
-
-	for _, x := range angka {
-		if string(x) != " " {
-			count[string(x)]++
+	count := make(map[string]int)
+	
+	for _, value := range angka {
+		value := string(value)
+		if value != " " {
+			count[value]++
 		}
 	}
 
-	for c := range count {
-		chars = append(chars, c)
-	}
-
-	sort.Slice(chars, func (i, j int) bool {
-		return count[chars[i]] > count[chars[j]]
-	})
-	
 	for key, value := range count {
-		check, _ := strconv.Atoi(key)
-
 		if value == 1 {
+			check, _ := strconv.Atoi(key)
 			result = append(result, check)
 		}
 	}
