@@ -22,10 +22,10 @@ func munculSekali(angka string) []int {
 		chars = append(chars, c)
 	}
 
-    sort.Slice(chars, func(i, j int) bool {
-        return count[chars[i]] > count[chars[j]]
-    })
-
+	sort.Slice(chars, func (i, j int) bool {
+		return count[chars[i]] > count[chars[j]]
+	})
+	
 	for key, value := range count {
 		check, _ := strconv.Atoi(key)
 
