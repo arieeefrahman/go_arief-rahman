@@ -1,4 +1,4 @@
-## Sumarry of Time Complexity & Space Complexity
+## Summary of Time Complexity & Space Complexity
 
 ### Tiga poin yang dipelajari dari materi ini adalah sebagai berikut.
 - *Time complexity* adalah menghitung seberapa lama pekerjaan dari sebuah program. *Time complexity* dapat dihitung dari melihat operasi dominan di dalam programnya. Tipe-tipe operasinya adalah operasi penambahan, pengurangan, perkalian, pembagian, *assignment*, dan sebagainya.
