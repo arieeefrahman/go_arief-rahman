@@ -1,0 +1,6 @@
+## Summary of Recursive, Number Theory, Sorting dan Searching
+
+### Tiga poin yang dipelajari dari materi ini adalah sebagai berikut.
+- Fungsi rekursif adalah fungsi yang memanggil dirinya sendiri secara berulang hingga mencapai kondisi tertentu. Rekursif dapat digunakan untuk menyelesaikan banyak masalah dan memperpendek kode. Dengan fungsi rekursif, kita dapat dengan mudah memahami suatu permasalahan yang apabila menggunakan solusi iteratif akan lebih kesulitan.
+- *Number theory* atau teori angka adalah cabang matematika yang mempelajari bilangan integer. Contoh topik-topik yang dipelajari adalah bilangan prima, faktor persekutuan terbesar, kelipatan persekutuan terkecil, faktorial, faktor prima, dan lainnya.
+- Metode *searching* dan *sorting*. *Searching* adalah metode yang digunakan untuk mencari posisi value yang ingin dicari di dalam list. *Searching* bisa digunakan dengan membuat algoritma sendiri seperti contohnya algoritma *searching* dengan *time complexity linear search* O(n) atau menggunakan *builtins search*. *Sorting* adalah metode yang digunakan untuk mengurutkan data dengan urutan tertentu. Ada banyak jenis *sorting* seperti *selection sort* O(n^2), *counting sort* O(n+k), *merge sort* O(log n), dan *builtins sort*.  
