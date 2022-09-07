@@ -28,24 +28,29 @@ func MostAppearIteam(items []string) []pair{
 	dict := make(map[string]int)
 	var pairs []pair
 
+	//count occurances
 	for _, v := range items  {
-		dict[v] = dict[v]+1
+		dict[v] = dict[v] + 1
 	}
 
+	// assign map to []pair
 	for key, value := range dict {
 		results := []pair{{name: key, count: value}}
 
 		for _, details := range results {
 			pairs = append(pairs, pair{
-				name: details.name, count: details.count,
+				name: details.name, 
+				count: details.count,
 			})
 		}
 	}
 
+	//sorting pairs based on count value
 	sort.Sort(countSorted(pairs))
 
 	return pairs
 }
+
 func main() {
 	fmt.Println(MostAppearIteam([]string{"js", "js", "golang", "ruby", "ruby", "js", "js"}))
 	fmt.Println(MostAppearIteam([]string{"A", "B", "B", "C", "A", "A", "B", "A", "D", "D"}))
