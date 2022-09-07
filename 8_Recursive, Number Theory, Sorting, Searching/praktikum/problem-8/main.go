@@ -2,11 +2,26 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 type pair struct {
 	name string
 	count int
+}
+
+type countSorted []pair
+
+func (c countSorted) Len() int {
+	return len(c)
+}
+
+func (c countSorted) Swap(i, j int)  {
+	c[i], c[j] = c[j], c[i]
+}
+
+func (c countSorted) Less(i, j int) bool {
+	return c[i].count < c[j].count
 }
 
 func MostAppearIteam(items []string) []pair{
@@ -26,6 +41,8 @@ func MostAppearIteam(items []string) []pair{
 			})
 		}
 	}
+
+	sort.Sort(countSorted(pairs))
 
 	return pairs
 }
