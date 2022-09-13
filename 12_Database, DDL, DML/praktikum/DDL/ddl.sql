@@ -68,6 +68,8 @@ CREATE TABLE payment_method_description (
     FOREIGN KEY (transaction_id) REFERENCES transaction(transaction_id)
 );
 
+ALTER TABLE product ADD CONSTRAINT fk_payment_id FOREIGN KEY (payment_method) REFERENCES payment_method_description(payment_id);
+
 /* 7. b. 1-to-many: user dengan alamat */
 CREATE TABLE alamat_detail (
 	user_id INT,
