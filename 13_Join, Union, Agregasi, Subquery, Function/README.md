@@ -1,0 +1,6 @@
+## Summary of Join, Union, Agregasi, Subquery, and Function
+
+### Poin-poin yang dipelajari dari materi ini adalah sebagai berikut.
+- Pada SQL terdapat klausa `JOIN`, yaitu sebuah klausa yang dapat mengkombinasikan *record* pada dua atau lebih tabel. Jenis-jenis `JOIN` pada SQL terdiri dari `INNER JOIN`, `LEFT JOIN`, dan `RIGHT JOIN`. Selain itu juga terdapat klausa `UNION` yang kegunaannya mirip dengan `JOIN`. Namun pada `UNION` akan mengembalikan semua record pada dua atau lebih tabel dengan syarat jumlah field input atau output harus sama.
+- Pada SQL terdapat *aggregate*. *Aggregate* atau fungsi agregasi adalah sebuah fungsi yang mana nilai beberapa baris dikelompokkan secara bersama untuk membentuk nilai ringkasan tunggal. Ada beberapa fungsi agregasi seperti `MIN()`, `MAX()`, `SUM()`, `AVG()`, `COUNT()`, dan `HAVING`. Terdapat juga *subquery* yang dapat digunakan dengan `SELECT`, `INSERT`, `UPDATE`, dan `DELETE` *statements* bersamaan dengan operator (=, <, >, >=, <=, `IN`, `BETWEEN`, dll) dan biasanya digunakan bersama dengan *aggregate*.
+- Pada SQL terdapat *function*. *Function* adalah sebuah kumpulan *statement* yang akan mengembalikan sebuah nilai balik pada pemanggilnya.
