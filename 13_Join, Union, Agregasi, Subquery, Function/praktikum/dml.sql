@@ -86,19 +86,16 @@ ALTER TABLE
 INSERT INTO `users`(`name`, `status`, `dob`, `gender`)
 VALUES('James', 1, '1995-02-12', 'M'),('Mark', 1, '1995-02-12', 'M'),('Katarina', 1, '1999-04-23', 'F'),('Gomez', 1, '1998-02-12', 'F'),('Denise', 1, '1998-05-28', 'F');
 
-/* 1i */
+/* 1i dan 1j*/
 ALTER TABLE
     transactions AUTO_INCREMENT = 1;
 INSERT INTO `transactions`(
     `user_id`,
     `payment_method_id`,
-    `status`,
-    `total_qty`,
-    `total_price`
+    `status`
 )
-VALUES(3, 1, 'success', 3, 25000),(1, 1, 'success', 2, 50000),(1, 2, 'success', 1, 10000);
+VALUES(1, 3, 'success'),(1, 3, 'success'),(1, 3, 'success'),(2, 1, 'success'),(2, 1, 'success'),(2, 1, 'success'),(3, 1, 'success'),(3, 1, 'success'),(3, 1, 'success'),(4, 2, 'success'),(4, 2, 'success'),(4, 2, 'success'),(5, 1, 'success'),(5, 1, 'success'),(5, 1, 'success');
 
-/* 1j */
 INSERT INTO `transaction_details`(
     `transaction_id`,
     `product_id`,
@@ -106,7 +103,28 @@ INSERT INTO `transaction_details`(
     `qty`,
     `price`
 )
-VALUES(1, 4, 'success', 3, 25000),(2, 1, 'success', 2, 50000),(3, 8, 'success', 1, 10000);
+VALUES(1, 3, 'success', 1, 30000),(1, 5, 'success', 1, 50000),(1, 4, 'success', 3, 40000),(2, 4, 'success', 2, 40000),(2, 5, 'success', 1, 50000),(2, 3, 'success', 2, 30000),(3, 3, 'success', 1, 30000),(3, 6, 'success', 1, 60000),(3, 8, 'success', 1, 80000),(4, 8, 'success', 2, 80000),(4, 7, 'success', 3, 70000),(4, 4, 'success', 2, 40000),(5, 3, 'success', 2, 30000),(5, 6, 'success', 1, 60000),(5, 7, 'success', 1, 70000),(6, 4, 'success', 2, 40000),(6, 7, 'success', 1, 70000),(6, 8, 'success', 2, 80000),(7, 5, 'success', 1, 50000),(7, 4, 'success', 1, 40000),(7, 6, 'success', 2, 60000),(8, 6, 'success', 2, 60000),(8, 7, 'success', 1, 70000),(8, 4, 'success', 1, 40000),(9, 6, 'success', 1, 60000),(9, 3, 'success', 1, 30000),(9, 4, 'success', 2, 40000),(10, 5, 'success', 3, 50000),(10, 6, 'success', 2, 60000),(10, 7, 'success', 1, 70000),(11, 4, 'success', 2, 40000),(11, 6, 'success', 2, 60000),(11, 8, 'success', 1, 80000),(12, 7, 'success', 2, 70000),(12, 6, 'success', 1, 60000),(12, 8, 'success', 1, 80000),(13, 3, 'success', 1, 30000),(13, 4, 'success', 2, 40000),(13, 5, 'success', 2, 50000),(14, 3, 'success', 3, 30000),(14, 5, 'success', 1, 50000),(14, 7, 'success', 1, 70000),(15, 3, 'success', 1, 30000),(15, 6, 'success', 2, 60000),(15, 8, 'success', 1, 80000);
+
+UPDATE
+    `transactions` T
+SET
+    T.total_qty =(
+    SELECT
+        SUM(qty)
+    FROM
+        `transaction_details`
+    WHERE
+        id = transaction_id
+),
+T.total_price =(
+    SELECT
+        SUM(qty * price)
+    FROM
+        `transaction_details`
+    WHERE
+        id = transaction_id
+),
+T.updated_at =(CURRENT_TIMESTAMP());
 
 /* 2a */
 SELECT `name` FROM `users` WHERE `gender` = 'M';
