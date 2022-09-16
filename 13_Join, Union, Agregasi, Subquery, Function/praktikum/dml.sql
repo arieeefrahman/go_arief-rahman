@@ -133,7 +133,7 @@ SELECT `name` FROM `users` WHERE `gender` = 'M';
 SELECT `id`, `name` FROM `products` WHERE `id` = 3;
 
 /* 2c */
-SELECT * FROM `users` WHERE `created_at` > NOW() - INTERVAL 7 day;
+SELECT * FROM `users` WHERE `created_at` < CURRENT_TIMESTAMP-7 AND users.name LIKE "%a%";
 
 /* 2d */
 SELECT COUNT(*) AS TotalFemaleUser FROM `users` WHERE `gender` = 'F';
