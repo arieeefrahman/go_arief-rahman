@@ -1,0 +1,6 @@
+## Summary of Configuration Management and CLI
+
+### Poin-poin yang dipelajari dari materi ini adalah sebagai berikut.
+- Command line adalah interface berbasis teks yang cepat dan kuat yang digunakan untuk berkomunikasi dengan komputer secara efektif dan efisien untuk menyelesaikan tugas/pekerjaan yang lebih luas. Command line memiliki banyak kegunaan, yaitu manajemen *operating systems* yang banyak dengan lebih cepat, kemampuan untuk menyimpan *scripts* automasi pekerjaan, kemudahan dalam *troubleshooting*, dan sebagainya.
+- Belajar introduction to UNIX Shell. Pada UNIX Shell terdapat berbagai macam user seperti normal user yang dapat memanipulasi *username directory only* dan root user yang dapat memanipulasi semua *directory*. *Commands* yang populer pada UNIX Shell terdiri dari *directory*, *files*, *network*, dan *utility*.
+- Belajar Shell Script. Shell adalah program yang berfungsi sebagai penghubung antara *user* dengan kernel. Shell script adalah bahasa pemrograman yang dikompilasi berdasarkan *shell commands*. 
