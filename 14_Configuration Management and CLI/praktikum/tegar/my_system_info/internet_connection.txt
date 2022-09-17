@@ -1,0 +1,9 @@
+Connection to google:
+PING google.com (74.125.200.139) 56(84) bytes of data.
+64 bytes from sa-in-f139.1e100.net (74.125.200.139): icmp_seq=1 ttl=57 time=26.1 ms
+64 bytes from 139.200.125.74.in-addr.arpa (74.125.200.139): icmp_seq=2 ttl=57 time=25.9 ms
+64 bytes from 139.200.125.74.in-addr.arpa (74.125.200.139): icmp_seq=3 ttl=57 time=25.8 ms
+
+--- google.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2002ms
+rtt min/avg/max/mdev = 25.786/25.934/26.143/0.151 ms
