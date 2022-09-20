@@ -1,0 +1,18 @@
+Problem 2 - Query
+
+Terdapat sebuah Query dalam format SQL.
+SELECT * FROM users;
+
+Dengan tujuan yang sama, tuliskan dalam bentuk perintah:
+    1. Redis
+        SELECT users
+        KEYS *
+        
+    2. Neo4J
+        use users
+        CALL db.schema.visualization()
+        
+    3. Cassandra
+        Statement stmt = new SimpleStatement("SELECT * FROM users");
+        stmt.setFetchSize(100);
+        ResultSet rs = session.execute(stmt);
