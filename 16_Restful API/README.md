@@ -1,0 +1,6 @@
+## Summary of RESTful API
+
+### Poin-poin yang dapat dipelajari dari materi ini adalah sebagai berikut.
+- *Application Programming Interface* (API) adalah sebuah kumpulan dari fungsi dan prosedur yang mengizinkan kita untuk mengakses sebuah fitur atau data dari sebuah aplikasi, sistem operasi, dan sebagainya. API bekerja dengan cara *client* melakukan *request* kepada server lalu server akan memberikan *response* yang sesuai dengan *request*. *Tools-tools* yang dapat digunakan untuk *testing* yaitu seperti API Katalon, Postman, SoapUI, Apache JMeter, dan *tools* lainnya.
+- *Representational State Transfer* (REST) adalah sekumpulan aturan yang biasanya digunakan untuk membangun aplikasi terdistribusi. REST menggunakan HTTP request untuk berkomunikasi dengan *resources*/aplikasi. *JavaScript Object Notation* (JSON) adalah sebuah format data yang digunakan untuk pertukaran dan menyimpan sebuah data. JSON mirip dengan struktur data map.
+- REST API design best practice seperti gunakan penamaan plural, gunakan kata benda daripada kata kerja, dan gunakan resource nesting.
