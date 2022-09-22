@@ -125,19 +125,23 @@
 					}
 				},
 				"url": {
-					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/user/1",
-					"protocol": "https",
+					"raw": "{{BASE_URL}}/:categories/:id",
 					"host": [
-						"virtserver",
-						"swaggerhub",
-						"com"
+						"{{BASE_URL}}"
 					],
 					"path": [
-						"sepulsa",
-						"RentABook-API",
-						"1.0.0",
-						"user",
-						"1"
+						":categories",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "categories",
+							"value": "user"
+						},
+						{
+							"key": "id",
+							"value": null
+						}
 					]
 				}
 			},
@@ -302,19 +306,23 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/user/1",
-					"protocol": "https",
+					"raw": "{{BASE_URL}}/:categories/:id",
 					"host": [
-						"virtserver",
-						"swaggerhub",
-						"com"
+						"{{BASE_URL}}"
 					],
 					"path": [
-						"sepulsa",
-						"RentABook-API",
-						"1.0.0",
-						"user",
-						"1"
+						":categories",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "categories",
+							"value": "user"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
 					]
 				}
 			},
@@ -422,18 +430,18 @@
 					"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Budi Doremi\",\r\n    \"age\": 20,\r\n    \"sex\": \"male\",\r\n    \"client_id\": 3\r\n}"
 				},
 				"url": {
-					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/user",
-					"protocol": "https",
+					"raw": "{{BASE_URL}}/:categories",
 					"host": [
-						"virtserver",
-						"swaggerhub",
-						"com"
+						"{{BASE_URL}}"
 					],
 					"path": [
-						"sepulsa",
-						"RentABook-API",
-						"1.0.0",
-						"user"
+						":categories"
+					],
+					"variable": [
+						{
+							"key": "categories",
+							"value": "user"
+						}
 					]
 				}
 			},
