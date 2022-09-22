@@ -1,0 +1,870 @@
+{
+	"info": {
+		"_postman_id": "17f8938c-c88d-4b9e-bf54-e8e116b1d02f",
+		"name": "SWAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16304674"
+	},
+	"item": [
+		{
+			"name": "GET All Categories in API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}",
+					"host": [
+						"{{BASE_URL}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Succeed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}",
+							"host": [
+								"{{BASE_URL}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.16.1"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Sep 2022 20:40:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "ETag",
+							"value": "\"62d89cf607f7b22eb4e22267457e26b0\""
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15768000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"people\": \"https://swapi.dev/api/people/\",\n    \"planets\": \"https://swapi.dev/api/planets/\",\n    \"films\": \"https://swapi.dev/api/films/\",\n    \"species\": \"https://swapi.dev/api/species/\",\n    \"vehicles\": \"https://swapi.dev/api/vehicles/\",\n    \"starships\": \"https://swapi.dev/api/starships/\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET People By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/:category/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						":category",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "category",
+							"value": "people"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Succeed with id=1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/:category/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								":category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "people"
+								},
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.16.1"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Sep 2022 20:40:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "ETag",
+							"value": "\"ee398610435c328f4d0a4e1b0d2f7bbc\""
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15768000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Luke Skywalker\",\n    \"height\": \"172\",\n    \"mass\": \"77\",\n    \"hair_color\": \"blond\",\n    \"skin_color\": \"fair\",\n    \"eye_color\": \"blue\",\n    \"birth_year\": \"19BBY\",\n    \"gender\": \"male\",\n    \"homeworld\": \"https://swapi.dev/api/planets/1/\",\n    \"films\": [\n        \"https://swapi.dev/api/films/1/\",\n        \"https://swapi.dev/api/films/2/\",\n        \"https://swapi.dev/api/films/3/\",\n        \"https://swapi.dev/api/films/6/\"\n    ],\n    \"species\": [],\n    \"vehicles\": [\n        \"https://swapi.dev/api/vehicles/14/\",\n        \"https://swapi.dev/api/vehicles/30/\"\n    ],\n    \"starships\": [\n        \"https://swapi.dev/api/starships/12/\",\n        \"https://swapi.dev/api/starships/22/\"\n    ],\n    \"created\": \"2014-12-09T13:50:51.644000Z\",\n    \"edited\": \"2014-12-20T21:17:56.891000Z\",\n    \"url\": \"https://swapi.dev/api/people/1/\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET Planets By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/:category/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						":category",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "category",
+							"value": "planets"
+						},
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Succeed with id=3",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/:category/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								":category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "planets"
+								},
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.16.1"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Sep 2022 20:44:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "ETag",
+							"value": "\"ccbca9ad5dbcc6c73413df0765660c26\""
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15768000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Yavin IV\",\n    \"rotation_period\": \"24\",\n    \"orbital_period\": \"4818\",\n    \"diameter\": \"10200\",\n    \"climate\": \"temperate, tropical\",\n    \"gravity\": \"1 standard\",\n    \"terrain\": \"jungle, rainforests\",\n    \"surface_water\": \"8\",\n    \"population\": \"1000\",\n    \"residents\": [],\n    \"films\": [\n        \"https://swapi.dev/api/films/1/\"\n    ],\n    \"created\": \"2014-12-10T11:37:19.144000Z\",\n    \"edited\": \"2014-12-20T20:58:18.421000Z\",\n    \"url\": \"https://swapi.dev/api/planets/3/\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET Films By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/:category/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						":category",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "category",
+							"value": "films"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Succeed with id=1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/:category/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								":category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "films"
+								},
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.16.1"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Sep 2022 20:40:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "ETag",
+							"value": "\"5af12d8e740a258e0c502b480ae78f2f\""
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15768000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"A New Hope\",\n    \"episode_id\": 4,\n    \"opening_crawl\": \"It is a period of civil war.\\r\\nRebel spaceships, striking\\r\\nfrom a hidden base, have won\\r\\ntheir first victory against\\r\\nthe evil Galactic Empire.\\r\\n\\r\\nDuring the battle, Rebel\\r\\nspies managed to steal secret\\r\\nplans to the Empire's\\r\\nultimate weapon, the DEATH\\r\\nSTAR, an armored space\\r\\nstation with enough power\\r\\nto destroy an entire planet.\\r\\n\\r\\nPursued by the Empire's\\r\\nsinister agents, Princess\\r\\nLeia races home aboard her\\r\\nstarship, custodian of the\\r\\nstolen plans that can save her\\r\\npeople and restore\\r\\nfreedom to the galaxy....\",\n    \"director\": \"George Lucas\",\n    \"producer\": \"Gary Kurtz, Rick McCallum\",\n    \"release_date\": \"1977-05-25\",\n    \"characters\": [\n        \"https://swapi.dev/api/people/1/\",\n        \"https://swapi.dev/api/people/2/\",\n        \"https://swapi.dev/api/people/3/\",\n        \"https://swapi.dev/api/people/4/\",\n        \"https://swapi.dev/api/people/5/\",\n        \"https://swapi.dev/api/people/6/\",\n        \"https://swapi.dev/api/people/7/\",\n        \"https://swapi.dev/api/people/8/\",\n        \"https://swapi.dev/api/people/9/\",\n        \"https://swapi.dev/api/people/10/\",\n        \"https://swapi.dev/api/people/12/\",\n        \"https://swapi.dev/api/people/13/\",\n        \"https://swapi.dev/api/people/14/\",\n        \"https://swapi.dev/api/people/15/\",\n        \"https://swapi.dev/api/people/16/\",\n        \"https://swapi.dev/api/people/18/\",\n        \"https://swapi.dev/api/people/19/\",\n        \"https://swapi.dev/api/people/81/\"\n    ],\n    \"planets\": [\n        \"https://swapi.dev/api/planets/1/\",\n        \"https://swapi.dev/api/planets/2/\",\n        \"https://swapi.dev/api/planets/3/\"\n    ],\n    \"starships\": [\n        \"https://swapi.dev/api/starships/2/\",\n        \"https://swapi.dev/api/starships/3/\",\n        \"https://swapi.dev/api/starships/5/\",\n        \"https://swapi.dev/api/starships/9/\",\n        \"https://swapi.dev/api/starships/10/\",\n        \"https://swapi.dev/api/starships/11/\",\n        \"https://swapi.dev/api/starships/12/\",\n        \"https://swapi.dev/api/starships/13/\"\n    ],\n    \"vehicles\": [\n        \"https://swapi.dev/api/vehicles/4/\",\n        \"https://swapi.dev/api/vehicles/6/\",\n        \"https://swapi.dev/api/vehicles/7/\",\n        \"https://swapi.dev/api/vehicles/8/\"\n    ],\n    \"species\": [\n        \"https://swapi.dev/api/species/1/\",\n        \"https://swapi.dev/api/species/2/\",\n        \"https://swapi.dev/api/species/3/\",\n        \"https://swapi.dev/api/species/4/\",\n        \"https://swapi.dev/api/species/5/\"\n    ],\n    \"created\": \"2014-12-10T14:23:31.880000Z\",\n    \"edited\": \"2014-12-20T19:49:45.256000Z\",\n    \"url\": \"https://swapi.dev/api/films/1/\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET Species By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/:category/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						":category",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "category",
+							"value": "species"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Succeed with id=1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/:category/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								":category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "species"
+								},
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.16.1"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Sep 2022 20:40:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "ETag",
+							"value": "\"350d7a429f0706ade1191d32e49c7d8b\""
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15768000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Human\",\n    \"classification\": \"mammal\",\n    \"designation\": \"sentient\",\n    \"average_height\": \"180\",\n    \"skin_colors\": \"caucasian, black, asian, hispanic\",\n    \"hair_colors\": \"blonde, brown, black, red\",\n    \"eye_colors\": \"brown, blue, green, hazel, grey, amber\",\n    \"average_lifespan\": \"120\",\n    \"homeworld\": \"https://swapi.dev/api/planets/9/\",\n    \"language\": \"Galactic Basic\",\n    \"people\": [\n        \"https://swapi.dev/api/people/66/\",\n        \"https://swapi.dev/api/people/67/\",\n        \"https://swapi.dev/api/people/68/\",\n        \"https://swapi.dev/api/people/74/\"\n    ],\n    \"films\": [\n        \"https://swapi.dev/api/films/1/\",\n        \"https://swapi.dev/api/films/2/\",\n        \"https://swapi.dev/api/films/3/\",\n        \"https://swapi.dev/api/films/4/\",\n        \"https://swapi.dev/api/films/5/\",\n        \"https://swapi.dev/api/films/6/\"\n    ],\n    \"created\": \"2014-12-10T13:52:11.567000Z\",\n    \"edited\": \"2014-12-20T21:36:42.136000Z\",\n    \"url\": \"https://swapi.dev/api/species/1/\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET Vehicles By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/:category/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						":category",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "category",
+							"value": "vehicles"
+						},
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Succeed with id=4",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/:category/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								":category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "vehicles"
+								},
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.16.1"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Sep 2022 20:47:46 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "ETag",
+							"value": "\"87a3827bdfac51cc696dea360d313fcc\""
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15768000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Sand Crawler\",\n    \"model\": \"Digger Crawler\",\n    \"manufacturer\": \"Corellia Mining Corporation\",\n    \"cost_in_credits\": \"150000\",\n    \"length\": \"36.8 \",\n    \"max_atmosphering_speed\": \"30\",\n    \"crew\": \"46\",\n    \"passengers\": \"30\",\n    \"cargo_capacity\": \"50000\",\n    \"consumables\": \"2 months\",\n    \"vehicle_class\": \"wheeled\",\n    \"pilots\": [],\n    \"films\": [\n        \"https://swapi.dev/api/films/1/\",\n        \"https://swapi.dev/api/films/5/\"\n    ],\n    \"created\": \"2014-12-10T15:36:25.724000Z\",\n    \"edited\": \"2014-12-20T21:30:21.661000Z\",\n    \"url\": \"https://swapi.dev/api/vehicles/4/\"\n}"
+				},
+				{
+					"name": "404 Not Found Because Data with id=1 Isn't Available",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/:category/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								":category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "vehicles"
+								},
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "NOT FOUND",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.16.1"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Sep 2022 20:46:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "ETag",
+							"value": "\"8bee5c3ad44d6c57f19e49e8e76ee09e\""
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET Starships By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/:category/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						":category",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "category",
+							"value": "starships"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Succeed with id=9",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/:category/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								":category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "starships"
+								},
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.16.1"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Sep 2022 20:48:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "ETag",
+							"value": "\"058c95fce38484128f1c3f2e5dd04d50\""
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15768000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Death Star\",\n    \"model\": \"DS-1 Orbital Battle Station\",\n    \"manufacturer\": \"Imperial Department of Military Research, Sienar Fleet Systems\",\n    \"cost_in_credits\": \"1000000000000\",\n    \"length\": \"120000\",\n    \"max_atmosphering_speed\": \"n/a\",\n    \"crew\": \"342,953\",\n    \"passengers\": \"843,342\",\n    \"cargo_capacity\": \"1000000000000\",\n    \"consumables\": \"3 years\",\n    \"hyperdrive_rating\": \"4.0\",\n    \"MGLT\": \"10\",\n    \"starship_class\": \"Deep Space Mobile Battlestation\",\n    \"pilots\": [],\n    \"films\": [\n        \"https://swapi.dev/api/films/1/\"\n    ],\n    \"created\": \"2014-12-10T16:36:50.509000Z\",\n    \"edited\": \"2014-12-20T21:26:24.783000Z\",\n    \"url\": \"https://swapi.dev/api/starships/9/\"\n}"
+				},
+				{
+					"name": "404 Not Found Because Data with id=1 Isn't Available",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/:category/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								":category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "starships"
+								},
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "NOT FOUND",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.16.1"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Sep 2022 20:48:54 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "ETag",
+							"value": "\"8bee5c3ad44d6c57f19e49e8e76ee09e\""
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Not found\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "https://swapi.dev/api",
+			"type": "string"
+		}
+	]
+}
