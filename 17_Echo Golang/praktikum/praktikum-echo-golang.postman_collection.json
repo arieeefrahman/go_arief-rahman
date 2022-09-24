@@ -1,0 +1,566 @@
+{
+	"info": {
+		"_postman_id": "ea19b5a4-3531-4a0e-9aff-8ede616a0821",
+		"name": "praktikum-echo-golang",
+		"description": "##### Testing Praktikum Section 17 - Echo Golang.\n\nNama : Arief Rahman  \nProgram : Golang  \nKelas : B\n\n##### MBKM \"Mastering Golang Programming Engineer Program\" - Alterra Academy.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16304674"
+	},
+	"item": [
+		{
+			"name": "Get all users data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users"
+					]
+				},
+				"description": "No need to write id in parameters."
+			},
+			"response": [
+				{
+					"name": "Succeed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 24 Sep 2022 08:32:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "540"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": \"success get all users\",\n    \"users\": [\n        {\n            \"id\": 1,\n            \"name\": \"Jake\",\n            \"email\": \"jake123@gmail.com\",\n            \"password\": \"jake8764\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Diana\",\n            \"email\": \"diana213@gmail.com\",\n            \"password\": \"diana999876\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Tony\",\n            \"email\": \"tonystark@gmail.com\",\n            \"password\": \"tonystarkmcu000\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Wanda\",\n            \"email\": \"wandamaxioff@gmail.com\",\n            \"password\": \"wandamaximoff12312132131\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Loki\",\n            \"email\": \"lokiloki@gmail.com\",\n            \"password\": \"lokisonofodin211\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Takashi Nguyen\",\n            \"email\": \"nguyen@gmail.com\",\n            \"password\": \"vietpride\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get single user by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				},
+				"description": "You can set or change id on path variables."
+			},
+			"response": [
+				{
+					"name": "Succeed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 24 Sep 2022 06:27:50 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "128"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": \"success get users by id\",\n    \"user\": {\n        \"id\": 3,\n        \"name\": \"Tony\",\n        \"email\": \"tonystark@gmail.com\",\n        \"password\": \"tonystarkmcu000\"\n    }\n}"
+				},
+				{
+					"name": "Failed: id not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 24 Sep 2022 08:42:33 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": \"failed to find user, user does not exist.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Takashi Nguyen",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "nguyen@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "vietpride",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users"
+					]
+				},
+				"description": "Do not forget to fill data that you want to input in body."
+			},
+			"response": [
+				{
+					"name": "Succeed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Takashi Nguyen",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "nguyen@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "vietpride",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 24 Sep 2022 08:32:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": \"success create user\",\n    \"user\": {\n        \"id\": 6,\n        \"name\": \"Takashi Nguyen\",\n        \"email\": \"nguyen@gmail.com\",\n        \"password\": \"vietpride\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete user by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Do not forget to set id in path variables."
+			},
+			"response": [
+				{
+					"name": "Succeed",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 24 Sep 2022 08:39:18 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "128"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": \"success delete users by id\",\n    \"users\": {\n        \"id\": 2,\n        \"name\": \"Diana\",\n        \"email\": \"diana213@gmail.com\",\n        \"password\": \"diana999876\"\n    }\n}"
+				},
+				{
+					"name": "Failed: id not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 24 Sep 2022 08:43:04 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "59"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": \"failed to delete user, user does not exist.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update user information",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Jake update",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "jake123update@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "20"
+						}
+					]
+				},
+				"description": "Do not forget to set id in path variables and fill data in body."
+			},
+			"response": [
+				{
+					"name": "Succeed",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Jake update",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jake123update@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 24 Sep 2022 08:34:41 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "135"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": \"success update users by id\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Jake update\",\n        \"email\": \"jake123update@gmail.com\",\n        \"password\": \"jake8764\"\n    }\n}"
+				},
+				{
+					"name": "Failed: id not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Jake update",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jake123update@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 24 Sep 2022 08:43:55 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "59"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": \"failed to update data, user does not exist.\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "localhost:8000",
+			"type": "string"
+		}
+	]
+}
