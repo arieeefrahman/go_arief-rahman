@@ -66,7 +66,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"boss\",\r\n    \"email\": \"boss@gmail.com\",\r\n    \"password\": \"boss123\"\r\n}",
+					"raw": "{\r\n    \"name\": \"ceee\",\r\n    \"email\": \"ceee@gmail.com\",\r\n    \"password\": \"ceee123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -147,7 +147,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "1"
+							"value": "3"
 						}
 					]
 				}
@@ -214,7 +214,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "1"
+							"value": "2"
 						}
 					]
 				}
@@ -271,7 +271,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"boss upd\",\r\n    \"email\": \"bossupdate@gmail.com\",\r\n    \"password\": \"boss123upd\"\r\n}",
+					"raw": "{\r\n    \"name\": \"boss upd2\",\r\n    \"email\": \"bossupdate2@gmail.com\",\r\n    \"password\": \"boss123upd2\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
