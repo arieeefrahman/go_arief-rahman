@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "4a412ca9-386c-45c2-9986-0e2936367751",
+		"name": "praktikum-ORM-part-1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16304674"
+	},
+	"item": [
+		{
+			"name": "GET all user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "succeed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 13:29:47 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "409"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success get all users\",\n    \"users\": [\n        {\n            \"ID\": 2,\n            \"CreatedAt\": \"2022-09-27T18:10:33.64+07:00\",\n            \"UpdatedAt\": \"2022-09-27T20:28:44.666+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"boss upd2\",\n            \"email\": \"bossupdate2@gmail.com\",\n            \"password\": \"boss123upd2\"\n        },\n        {\n            \"ID\": 3,\n            \"CreatedAt\": \"2022-09-27T20:29:38.854+07:00\",\n            \"UpdatedAt\": \"2022-09-27T20:29:38.854+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"ceee\",\n            \"email\": \"ceee@gmail.com\",\n            \"password\": \"ceee123\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "POST create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"boss\",\r\n    \"email\": \"boss@gmail.com\",\r\n    \"password\": \"boss123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "succeed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ceee\",\r\n    \"email\": \"ceee@gmail.com\",\r\n    \"password\": \"ceee123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 13:29:38 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "219"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success create new user\",\n    \"user\": {\n        \"ID\": 3,\n        \"CreatedAt\": \"2022-09-27T20:29:38.854+07:00\",\n        \"UpdatedAt\": \"2022-09-27T20:29:38.854+07:00\",\n        \"DeletedAt\": null,\n        \"name\": \"ceee\",\n        \"email\": \"ceee@gmail.com\",\n        \"password\": \"ceee123\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GET user by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "succeed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 13:30:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "220"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success get user by id\",\n    \"user\": [\n        {\n            \"ID\": 3,\n            \"CreatedAt\": \"2022-09-27T20:29:38.854+07:00\",\n            \"UpdatedAt\": \"2022-09-27T20:29:38.854+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"ceee\",\n            \"email\": \"ceee@gmail.com\",\n            \"password\": \"ceee123\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "DEL delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "succeed",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 13:30:15 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success delete user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UPDATE user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"boss upd\",\r\n    \"email\": \"bossupdate@gmail.com\",\r\n    \"password\": \"boss123upd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "succeed",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"boss upd2\",\r\n    \"email\": \"bossupdate2@gmail.com\",\r\n    \"password\": \"boss123upd2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 13:28:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success update user\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
