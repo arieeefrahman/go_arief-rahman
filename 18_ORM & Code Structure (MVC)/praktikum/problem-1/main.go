@@ -45,7 +45,6 @@ func InitDB() {
 		config.DB_Name,
 	)
 	var err error
-	// DB, err = gorm.Open("mysql", connectionString)
 	DB, err = gorm.Open(mysql.Open(connectionString))
 	if err != nil {
 		panic(err)
@@ -66,9 +65,17 @@ func InitialMigration() {
 // get all users
 func GetUsersController(c echo.Context) error {
 	var users []User
+
 	if err := DB.Find(&users).Error; err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
+
+	if len(users) == 0 {
+		return c.JSON(http.StatusOK, map[string]interface{}{
+			"message": "empty user",
+		})
+	}
+
 	return c.JSON(http.StatusOK, map[string]interface{}{
 		"message": "success get all users",
 		"users": users,
@@ -80,8 +87,13 @@ func GetUserController(c echo.Context) error {
 	// your solution here
 	id, _ := strconv.Atoi(c.Param("id"))
 	var user []User
-	if err := DB.First(&user, id).Error; err != nil {
+	
+	if err := DB.Find(&user, "id = ?" ,id).Error; err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	}
+
+	if len(user) == 0 {
+		return echo.NewHTTPError(http.StatusNotFound)
 	}
 	
 	return c.JSON(http.StatusOK, map[string]interface{}{
@@ -94,12 +106,14 @@ func GetUserController(c echo.Context) error {
 func CreateUserController(c echo.Context) error {
 	user := User{}
 	c.Bind(&user)
+
 	if err := DB.Save(&user).Error; err != nil {
-	return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
+
 	return c.JSON(http.StatusOK, map[string]interface{}{
-	"message": "success create new user",
-	"user": user,
+		"message": "success create new user",
+		"user": user,
 	})
 }
 
@@ -108,6 +122,11 @@ func DeleteUserController(c echo.Context) error {
 	// your solution here
 	id, _ := strconv.Atoi(c.Param("id"))
 	var user []User
+
+	if err := DB.Find(&user, "id = ?" ,id).Error; err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	}
+
 	if err := DB.Delete(&user, id).Error; err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
@@ -125,14 +144,11 @@ func UpdateUserController(c echo.Context) error {
 	var users []User
 	c.Bind(&user)
 
-	// if err := DB.Model(&users).Where("id = ?", id).Updates(map[string]interface{}{"name": user.Name, "email": user.Email, "password": user.Password}).Error; err != nil {
-	// 	return echo.NewHTTPError(http.StatusBadRequest, err.Error())
-	// }
-
-	err := DB.Model(&users).Where("id = ?", id).
-		Updates(map[string]interface{}{"name": user.Name, "email": user.Email, "password": user.Password}).
-		Error 
-	if err != nil {
+	if err := DB.Model(&users).Where("id = ?", id).
+			Updates(map[string]interface{}{"name": user.Name,
+										   "email": user.Email,
+										   "password": user.Password}).
+			Error; err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
 
