@@ -1,0 +1,804 @@
+{
+	"info": {
+		"_postman_id": "4c706b37-4add-46fe-b4a6-41638fc46dc5",
+		"name": "praktikum-middleware",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16304674"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"fresht@gmail.com\",\r\n    \"password\": \"frestmelati\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"fresht@gmail.com\",\r\n    \"password\": \"frestmelati\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/login",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Sep 2022 10:04:00 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "239"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"login success\",\n    \"user\": {\n        \"id\": 8,\n        \"name\": \"fresht\",\n        \"email\": \"fresht@gmail.com\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GET jwt all user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/jwt/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"jwt",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "missing jwt token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/jwt/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"jwt",
+										"users"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Sep 2022 10:08:27 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"missing or malformed jwt\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/jwt/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"jwt",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Sep 2022 10:09:58 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "748"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success get all users\",\n    \"users\": [\n        {\n            \"ID\": 8,\n            \"CreatedAt\": \"2022-09-29T15:20:53+07:00\",\n            \"UpdatedAt\": \"2022-09-29T15:20:53+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"fresht\",\n            \"email\": \"fresht@gmail.com\",\n            \"password\": \"frestmelati\"\n        },\n        {\n            \"ID\": 9,\n            \"CreatedAt\": \"2022-09-29T17:09:18+07:00\",\n            \"UpdatedAt\": \"2022-09-29T17:09:18+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"gagagel\",\n            \"email\": \"gagawewlll@gmail.com\",\n            \"password\": \"gaga123\"\n        },\n        {\n            \"ID\": 10,\n            \"CreatedAt\": \"2022-09-29T17:09:31+07:00\",\n            \"UpdatedAt\": \"2022-09-29T17:09:31+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"foxy\",\n            \"email\": \"foxy@gmail.com\",\n            \"password\": \"9129312foxy\"\n        },\n        {\n            \"ID\": 11,\n            \"CreatedAt\": \"2022-09-29T17:09:53+07:00\",\n            \"UpdatedAt\": \"2022-09-29T17:09:53+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"liluzivert\",\n            \"email\": \"uzivert@gmail.com\",\n            \"password\": \"liluzivert999\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GET jwt user by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/jwt/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"jwt",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "missing jwt token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/jwt/users/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"jwt",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Sep 2022 10:12:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"missing or malformed jwt\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/jwt/users/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"jwt",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Sep 2022 10:12:49 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success get user by id\",\n    \"user\": [\n        {\n            \"ID\": 10,\n            \"CreatedAt\": \"2022-09-29T17:09:31+07:00\",\n            \"UpdatedAt\": \"2022-09-29T17:09:31+07:00\",\n            \"DeletedAt\": null,\n            \"name\": \"foxy\",\n            \"email\": \"foxy@gmail.com\",\n            \"password\": \"9129312foxy\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/jwt/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"jwt",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/jwt/users/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"jwt",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Sep 2022 10:56:24 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success delete user\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PUT update user data",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"gagagel updt\",\r\n    \"email\": \"gagawewlllupdt@gmail.com\",\r\n    \"password\": \"gagelupdt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/jwt/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"jwt",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"gagagel updt\",\r\n    \"email\": \"gagawewlllupdt@gmail.com\",\r\n    \"password\": \"gagelupdt\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/jwt/users/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"jwt",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Sep 2022 10:58:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success update user\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "DELETE jwt book by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/jwt/books/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"jwt",
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/jwt/books/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"jwt",
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Sep 2022 10:55:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success delete book\"\n}"
+						}
+					]
+				},
+				{
+					"name": "POST create new book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mastering Front-end: ReactJS\",\r\n    \"isbn\": \"812831-BCKNDJS2\",\r\n    \"description\": \"clearful way to master frontend using ReactJS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/jwt/books",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"jwt",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Mastering Front-end: ReactJS\",\r\n    \"isbn\": \"812831-BCKNDJS2\",\r\n    \"description\": \"clearful way to master frontend using ReactJS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/jwt/books",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"jwt",
+										"books"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Sep 2022 11:01:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "293"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"book\": {\n        \"ID\": 8,\n        \"CreatedAt\": \"2022-09-29T18:01:12.4032029+07:00\",\n        \"UpdatedAt\": \"2022-09-29T18:01:12.4032029+07:00\",\n        \"DeletedAt\": null,\n        \"title\": \"Mastering Front-end: ReactJS\",\n        \"isbn\": \"812831-BCKNDJS2\",\n        \"description\": \"clearful way to master frontend using ReactJS\"\n    },\n    \"message\": \"success create new book\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PUT update book data",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mastering Front-end: ReactJS 2nd Edition\",\r\n    \"isbn\": \"810000-FRNTNDRJS\",\r\n    \"description\": \"Second edition of Mastering Front-end: ReactJS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/jwt/books/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"jwt",
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NDk0NDAsIm5hbWUiOiJmcmVzaHQiLCJ1c2VySWQiOjh9.Ni-PZlkoqGe3QZxP1JGEjtITEt2KKdpWN0-1NwH309U",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Mastering Front-end: ReactJS 2nd Edition\",\r\n    \"isbn\": \"810000-FRNTNDRJS\",\r\n    \"description\": \"Second edition of Mastering Front-end: ReactJS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/jwt/books/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"jwt",
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Sep 2022 11:03:39 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success update book\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
