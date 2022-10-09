@@ -21,8 +21,7 @@ func NewUserController(userUseCase usecase.UserUseCase) *userController {
 func (cr *userController) GetAllUsers() echo.HandlerFunc {
 	return func(c echo.Context) error {
 		users := model.User{}
-		// err := db.Find(&users).Error
-		// users, err := userController.useCase.UserUseCase.GetAll()
+		
 		users, err := usecase.UserUseCase.GetAll(cr.useCase)
 		if err != nil {
 			return c.JSON(500, echo.Map{
