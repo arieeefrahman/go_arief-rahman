@@ -94,9 +94,15 @@ func HandlingChoice(choice int) []Book{
 	case 1:
 		result := Books
 		sort.Sort(NameSorter(result))
+		lenResult := len(result)
+		
+		if lenResult == 0 {
+			fmt.Println("Empty books. Create a book first!")
+			break
+		}
+		
 		fmt.Println("\nAll books")
-			
-		for i := 0; i < len(result); i++ {
+		for i := 0; i < lenResult; i++ {
 			fmt.Println("===")
 			fmt.Printf("ID:   %s\n", result[i].Id)
 			fmt.Printf("Title:   %s\n", result[i].Title)
