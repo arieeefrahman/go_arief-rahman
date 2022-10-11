@@ -59,6 +59,7 @@ var (
 	}
 )
 
+//Handle input from user
 func HandlingInput(choice int) {
 
 	// error handling: prevent input number outside 1 to 5
@@ -87,6 +88,7 @@ var GenerateUuid = func() uuid.UUID{
 	return uuid.New()
 }
 
+//Run operations based on user input
 func HandlingChoice(choice int) []Book{
 	switch choice {
 	case 1:
