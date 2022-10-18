@@ -1,0 +1,6 @@
+## Summary of CI/CD
+
+### Poin-poin yang dipelajari dari materi ini adalah sebagai berikut.
+- *Continous Integrate* (CI) adalah sebuah proses automasi untuk mengintegrasikan berbagai jenis *code* dari *source* yang potensial untuk dilakukan *building* dan *deployment* aplikasi. *Continous Deployment* (CD) adalah sebuah proses melakukan *deployment* secara automasi ketika berhasil mem-*build* aplikasi.
+- Cycle pada CI yaitu pertama developer melakukan commit code changes ke source control server, source control server lalu fetching perubahan ke continous integration server, continous integration server akan melakukan building dan testing secara automasi, lalu continous integration server akan memberitahu developer apakah proses berhasil atau gagal. Apabila proses gagal, maka developer melakukan debugging sampai proses berhasil. Hal ini akan dilakukan lagi apabila developer melakukan perubahan code atau penambahan fitur.
+- Cycle pada CD yaitu unit test -> platform test -> deliver to staging -> application acceptance tests -> deploy to production -> post deploy tests.
