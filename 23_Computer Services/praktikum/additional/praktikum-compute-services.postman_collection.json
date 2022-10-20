@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "786fb105-6f7a-4837-8fe3-059193643059",
+		"name": "praktikum-compute-services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16304674"
+	},
+	"item": [
+		{
+			"name": "create Item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Polysilane\",\r\n    \"price\": 26000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://praktikum-compute-services.herokuapp.com/items",
+					"protocol": "https",
+					"host": [
+						"praktikum-compute-services",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create Item",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Polysilane\",\r\n    \"price\": 26000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://praktikum-compute-services.herokuapp.com/items",
+							"protocol": "https",
+							"host": [
+								"praktikum-compute-services",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"items"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 20 Oct 2022 11:18:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "173"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"ID\": 1,\n        \"CreatedAt\": \"2022-10-20T11:18:44.828Z\",\n        \"UpdatedAt\": \"2022-10-20T11:18:44.828Z\",\n        \"DeletedAt\": null,\n        \"name\": \"Polysilane\",\n        \"price\": 26000\n    },\n    \"message\": \"item created!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get all items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://praktikum-compute-services.herokuapp.com/items",
+					"protocol": "https",
+					"host": [
+						"praktikum-compute-services",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all items",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://praktikum-compute-services.herokuapp.com/items",
+							"protocol": "https",
+							"host": [
+								"praktikum-compute-services",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"items"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 20 Oct 2022 11:19:32 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"ID\": 1,\n            \"CreatedAt\": \"2022-10-20T11:18:44.828Z\",\n            \"UpdatedAt\": \"2022-10-20T11:18:44.828Z\",\n            \"DeletedAt\": null,\n            \"name\": \"Polysilane\",\n            \"price\": 26000\n        }\n    ],\n    \"message\": \"success\"\n}"
+				}
+			]
+		}
+	]
+}
