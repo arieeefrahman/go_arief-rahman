@@ -12,6 +12,6 @@ Berisi jawaban weekly task golang 2 dengan konten source code pada folder source
    CREATE DATABASE weekly_task;
    ```
 5. Run the application with this command.
-   ```go
+   ```shell
    go run main.go
    ```
