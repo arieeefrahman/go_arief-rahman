@@ -9,6 +9,7 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+//handle get all categories
 func GetAllCategory(c echo.Context) error {
 	var category []models.Category
 
@@ -22,6 +23,7 @@ func GetAllCategory(c echo.Context) error {
 	})
 }
 
+//handle get category by id
 func GetCategoryById(c echo.Context) error {
 	var category models.Category
 	id, _ := strconv.Atoi(c.Param("id"))
@@ -36,6 +38,7 @@ func GetCategoryById(c echo.Context) error {
 	})
 }
 
+//handle creating category with unique name
 func CreateCategory(c echo.Context) error {
 	var category models.Category
 	c.Bind(&category)

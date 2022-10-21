@@ -10,13 +10,16 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+//handle get all products and get product by product name
 func GetAllProducts(c echo.Context) error {
 	var product []models.Product
 
+	//processing query param
 	name := c.QueryParam("keyword")
 	rgx := regexp.MustCompile(`[-]`)
 	queryName := rgx.ReplaceAllString(name, " ")
 
+	//if user inputted the query param, process get product by keyword
 	if queryName != "" {
 		if err := db.DB.Preload("Category").Where("name = ? ", queryName).First(&product).Error; err != nil {
 			return echo.NewHTTPError(http.StatusNotFound, err.Error())
@@ -28,6 +31,7 @@ func GetAllProducts(c echo.Context) error {
 		})
 	}
 
+	// if user did not input the query param, process to get all products
 	if err := db.DB.Preload("Category").Find(&product).Error; err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}	
@@ -38,6 +42,7 @@ func GetAllProducts(c echo.Context) error {
 	})
 }
 
+//handle get product by product id
 func GetProductById(c echo.Context) error {
 	var product models.Product
 	id, _ := strconv.Atoi(c.Param("id"))
@@ -52,6 +57,7 @@ func GetProductById(c echo.Context) error {
 	})
 }
 
+//handle get product by category id
 func GetProductByCategoryId(c echo.Context) error {
 	var product []models.Product
 	categoryId, _ := strconv.Atoi(c.Param("category_id"))
@@ -66,6 +72,7 @@ func GetProductByCategoryId(c echo.Context) error {
 	})
 }
 
+//handle create product
 func CreateProduct(c echo.Context) error {
 	var product models.Product
 	c.Bind(&product)
@@ -89,6 +96,7 @@ func CreateProduct(c echo.Context) error {
 	})
 }
 
+//handle updating product data by id
 func UpdateProduct(c echo.Context) error {
 	var product models.Product
 	var products []models.Product
@@ -115,6 +123,7 @@ func UpdateProduct(c echo.Context) error {
 	})
 }
 
+//handle deleting product by id
 func DeleteProduct(c echo.Context) error {
 	var product models.Product
 	id, _ := strconv.Atoi(c.Param("id"))
