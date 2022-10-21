@@ -2,6 +2,7 @@ package models
 
 import "gorm.io/gorm"
 
+//product has foreign key "category_id" from table category
 type Product struct {
 	gorm.Model
 	Name        string `json:"name"`
