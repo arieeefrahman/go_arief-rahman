@@ -10,9 +10,13 @@ func GetConfig(key string) string {
 	viper.AddConfigPath(".")
 	viper.SetConfigFile(".env")
 
-	if err := viper.ReadInConfig(); err != nil {
+	err := viper.ReadInConfig()
+	
+	if err != nil {
 		log.Fatalf("error when reading config: %s", err)
 	}
 
-	return viper.GetString(key)
+	resp := viper.GetString(key)
+
+	return resp
 }
