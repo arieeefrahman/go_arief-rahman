@@ -42,6 +42,24 @@ func GetAllProducts(c echo.Context) error {
 	})
 }
 
+func GetProductsByName(c echo.Context) error {
+	var product []models.Product
+
+	//processing query param
+	name := c.QueryParam("keyword")
+	rgx := regexp.MustCompile(`[-]`)
+	queryName := rgx.ReplaceAllString(name, " ")
+
+	if err := db.DB.Preload("Category").Where("name = ? ", queryName).First(&product).Error; err != nil {
+		return echo.NewHTTPError(http.StatusNotFound, err.Error())
+	}
+
+	return c.JSON(http.StatusOK, map[string]any{
+		"message": "product by name",
+		"result": product,
+	})
+}
+
 //handle get product by product id
 func GetProductById(c echo.Context) error {
 	var product models.Product

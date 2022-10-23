@@ -9,6 +9,7 @@ func SetupRoute(e *echo.Echo) {
 	
 	//route get-all-product dan get-product-by-name
 	e.GET("/products", controllers.GetAllProducts)
+	e.GET("/products?keyword=", controllers.GetProductsByName)
 
 	//route get-product-by-id
 	e.GET("/products/:id", controllers.GetProductById)
