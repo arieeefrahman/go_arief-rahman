@@ -7,22 +7,22 @@ import (
 )
 func SetupRoute(e *echo.Echo) {
 	
+	products := e.Group("/products")
 	//route get-all-product dan get-product-by-name
-	e.GET("/products", controllers.GetAllProducts)
-	e.GET("/products?keyword=", controllers.GetProductsByName)
+	products.GET("", controllers.GetAllProducts)
 
 	//route get-product-by-id
-	e.GET("/products/:id", controllers.GetProductById)
+	products.GET("/:id", controllers.GetProductById)
 	
 	//route create-product
-	e.POST("/products", controllers.CreateProduct)
+	products.POST("", controllers.CreateProduct)
 
 	//route update-product
-	e.PUT("/products/:id", controllers.UpdateProduct)
+	products.PUT("/:id", controllers.UpdateProduct)
 	
 	//route delete-product
-	e.DELETE("/products/:id", controllers.DeleteProduct)
+	products.DELETE("/:id", controllers.DeleteProduct)
 	
 	//route  get-product-by-category-id
-	e.GET("/products/category/:category_id", controllers.GetProductByCategoryId)
+	products.GET("/category/:category_id", controllers.GetProductByCategoryId)
 }
