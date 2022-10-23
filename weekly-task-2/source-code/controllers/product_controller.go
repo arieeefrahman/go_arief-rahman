@@ -13,7 +13,24 @@ import (
 //handle get all products and get product by product name
 func GetAllProducts(c echo.Context) error {
 	var product []models.Product
+
+	//processing query param
+	name := c.QueryParam("keyword")
+	rgx := regexp.MustCompile(`[-]`)
+	queryName := rgx.ReplaceAllString(name, " ")
+
+	//if user inputted the query param, process get product by keyword
+	if queryName != "" {
+		if err := db.DB.Preload("Category").Where("name = ? ", queryName).First(&product).Error; err != nil {
+			return echo.NewHTTPError(http.StatusNotFound, err.Error())
+		}
 	
+		return c.JSON(http.StatusOK, map[string]any{
+			"message": "product by name",
+			"result": product,
+		})
+	}
+
 	// if user did not input the query param, process to get all products
 	if err := db.DB.Preload("Category").Find(&product).Error; err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
@@ -21,24 +38,6 @@ func GetAllProducts(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, map[string]any{
 		"message": "all products",
-		"result": product,
-	})
-}
-
-func GetProductsByName(c echo.Context) error {
-	var product []models.Product
-
-	//processing query param
-	name := c.QueryParam("keyword")
-	rgx := regexp.MustCompile(`[-]`)
-	queryName := rgx.ReplaceAllString(name, " ")
-
-	if err := db.DB.Preload("Category").Where("name = ? ", queryName).First(&product).Error; err != nil {
-		return echo.NewHTTPError(http.StatusNotFound, err.Error())
-	}
-
-	return c.JSON(http.StatusOK, map[string]any{
-		"message": "product by name",
 		"result": product,
 	})
 }
