@@ -1,6 +1,7 @@
 ### Praktikum CI/CD
 #### Implementasi CI/CD menggunakan Github Actions
-Berisi jawaban weekly task golang 3 dengan konten source code pada folder source-code dan screenshot tabel pada folder screenshots.
+- Berisi jawaban weekly task golang 3 dengan konten source code pada folder source-code dan screenshot tabel pada folder screenshots.
+- File yang ada pada folder source ini merupakan copy dari repository yang berbeda. Link repositorynya bisa dilihat pada folder `references`
 
 ### How to Run
 1. Clone this repository.
