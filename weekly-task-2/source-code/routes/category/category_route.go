@@ -8,12 +8,8 @@ import (
 
 func SetupRoute(e *echo.Echo) {
 
-	//route get-all-categories
-	e.GET("/categories", controllers.GetAllCategory)
-	
-	//route get-category-by-id
-	e.GET("/categories/:id", controllers.GetCategoryById)
-
-	//route create-category (unique name)
-	e.POST("/categories", controllers.CreateCategory)
+	categories := e.Group("/categories")
+	categories.GET("", controllers.GetAllCategory).Name = "get-all-categories"
+	categories.GET("/categories/:id", controllers.GetCategoryById).Name = "get-category-by-id"
+	categories.POST("/categories", controllers.CreateCategory).Name = "create-category"
 }

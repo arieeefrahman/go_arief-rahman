@@ -8,21 +8,11 @@ import (
 func SetupRoute(e *echo.Echo) {
 	
 	products := e.Group("/products")
-	//route get-all-product dan get-product-by-name
-	products.GET("", controllers.GetAllProducts)
-
-	//route get-product-by-id
-	products.GET("/:id", controllers.GetProductById)
-	
-	//route create-product
-	products.POST("", controllers.CreateProduct)
-
-	//route update-product
-	products.PUT("/:id", controllers.UpdateProduct)
-	
-	//route delete-product
-	products.DELETE("/:id", controllers.DeleteProduct)
-	
-	//route  get-product-by-category-id
-	products.GET("/category/:category_id", controllers.GetProductByCategoryId)
+	products.GET("", controllers.GetAllProducts).Name = "get-all"
+	products.GET("", controllers.GetProductByName).Name = "get-by-name"
+	products.GET("/:id", controllers.GetProductById).Name = "get-by-id"
+	products.POST("", controllers.CreateProduct).Name = "create-product"
+	products.PUT("/:id", controllers.UpdateProduct).Name = "update-product"
+	products.DELETE("/:id", controllers.DeleteProduct).Name = "delete-product"
+	products.GET("/category/:category_id", controllers.GetProductByCategoryId).Name = "get-product-by-category-id"
 }
